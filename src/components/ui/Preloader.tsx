@@ -7,10 +7,10 @@ export function Preloader() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Hide preloader after 2.5 seconds
+    // Hide preloader after 1.2 seconds for better UX and SEO scores
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2500);
+    }, 1200);
     return () => clearTimeout(timer);
   }, []);
 

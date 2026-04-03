@@ -65,7 +65,7 @@ export default function Home() {
           <motion.h1 
              initial={{ opacity: 0, y: 30 }}
              animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 1, delay: 2.2, ease: [0.16, 1, 0.3, 1] }}
+             transition={{ duration: 1, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
              className="text-[4rem] sm:text-[6rem] md:text-[9rem] lg:text-[12rem] font-bold tracking-tighter leading-[0.85] text-zinc-900 dark:text-white"
           >
             LIQUID
@@ -78,7 +78,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 2.6, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-wrap items-center justify-center gap-4 z-30 mb-8"
         >
           <a href="#collection">
@@ -97,15 +97,20 @@ export default function Home() {
         <motion.div 
           initial={{ opacity: 0, y: 100, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1.5, delay: 1.8, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full flex-1 min-h-[50vh] md:min-h-[70vh] rounded-[2rem] md:rounded-[3rem] overflow-hidden relative shadow-2xl border border-zinc-200 dark:border-white/5 z-10"
+          transition={{ duration: 1.5, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full flex-1 min-h-[50vh] md:min-h-[70vh] rounded-[2rem] md:rounded-[3rem] overflow-hidden relative shadow-2xl border border-zinc-200 dark:border-white/5 z-10 bg-zinc-100 dark:bg-zinc-900"
         >
-          <motion.img 
-            style={{ scale: imageScale }}
-            src={heroSplash} 
-            alt="Pure Drift Splash" 
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          <motion.div style={{ scale: imageScale }} className="absolute inset-0">
+            <Image 
+              src="/hero-splash.png" 
+              alt="Pure Drift Splash" 
+              fill
+              priority
+              sizes="100vw"
+              style={{ objectFit: "cover" }}
+              className="absolute inset-0"
+            />
+          </motion.div>
           {/* Subtle gradient overlay to blend corners if needed */}
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/20 to-transparent pointer-events-none" />
         </motion.div>
